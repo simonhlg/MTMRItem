@@ -1,0 +1,88 @@
+[
+  {
+    "type": "group",
+    "title": "Web",
+    "align": "left",
+  	"width": 50,
+  	"bordered": false,
+    "items": [
+      {
+        "type": "close",
+        "bordered": false,
+        "align": "left"
+      },
+      { "type": "staticButton", "width": 50, "align": "left", "title":"", "bordered": false, "action": "openUrl", "url": "website",    "image": {"filePath":"/Users/user/Library/Application Support/MTMR/Picture/openmediavault-circle.png"},},
+      { "type": "staticButton", "width": 50, "align": "left", "title":"", "bordered": false, "action": "openUrl", "url": "website",    "image": {"filePath":"/Users/user/Library/Application Support/MTMR/Picture/plex-logo-rounded.png"},},
+  	  { "type": "staticButton", "width": 50, "align": "left", "title":"", "bordered": false, "action": "openUrl", "url": "website",    "image": {"filePath":"/Users/user/Library/Application Support/MTMR/Picture/logo-round-192x192.png"},},
+  	  { "type": "staticButton", "width": 50, "align": "left", "title":"", "bordered": false, "action": "openUrl", "url": "website",    "image": {"filePath":"/Users/user/Library/Application Support/MTMR/Picture/22225832.png"},},
+  	  { "type": "staticButton", "width": 50, "align": "left", "title":"", "bordered": false, "action": "openUrl", "url": "website",    "image": {"filePath":"/Users/user/Library/Application Support/MTMR/Picture/Jdownloader.png"},},
+  	  { "type": "staticButton", "width": 50, "align": "left", "title":"", "bordered": false, "action": "openUrl", "url": "website",    "image": {"filePath":"/Users/user/Library/Application Support/MTMR/Picture/ea5fe583c5d406e18fc75b4e060187d100c3b7578cc8134cc1dab0ad.png"},},      
+      { "type": "staticButton", "width": 50, "align": "left", "title":"", "bordered": false, "action": "openUrl", "url": "website",    "image": {"filePath":"/Users/user/Library/Application Support/MTMR/Picture/1200px-Octicons-mark-github.svg.png"},},
+
+  	]
+  },
+  { "type": "dock", "width": 150, "align": "left", },
+  {
+    "type": "music",
+    "align": "left",
+    "bordered": false,
+    "refreshInterval": 2,
+    "disableMarquee": true
+  },
+  {
+    "type": "yandexWeather",
+    "refreshInterval": 600,
+	"width": 70,
+    "align": "right",
+    "bordered": false
+  },
+  {
+    "type": "shellScriptTitledButton",
+    "width": 80,
+    "refreshInterval": 2,
+    "source": {
+      "inline": "top -l 2 -n 0 -F | egrep -o ' \\d*\\.\\d+% idle' | tail -1 | awk -F% '{p = 100 - $1; if (p > 30) c = \"\\033[33m\"; if (p > 70) c = \"\\033[30;43m\"; printf \"%s%4.1f%%\\n\", c, p}'"
+    },
+    "action": "appleScript",
+    "actionAppleScript": {
+      "inline": "activate application \"Activity Monitor\"\rtell application \"System Events\"\r\ttell process \"Activity Monitor\"\r\t\ttell radio button \"CPU\" of radio group 1 of group 2 of toolbar 1 of window 1 to perform action \"AXPress\"\r\tend tell\rend tell"
+    },
+    "align": "right",
+    "image": {
+      "filePath":
+      "/Users/user/Library/Application Support/MTMR/Picture/CPU.png"
+    },
+    "bordered": false
+  },
+  {
+    "type": "appleScriptTitledButton",
+    "refreshInterval": 50,
+    "align": "right",
+    "source": {
+      "filePath": "/Users/user/Library/Application Support/MTMR/freespace scrpit.scpt",
+    },
+    "image": {
+      "filePath": "/Users/user/Library/Application Support/MTMR/Picture/31623.png"
+    }
+  },
+  {
+    "type": "battery",
+    "align": "right",
+    "bordered": false,
+    "image": {
+      "filePath": "/Users/user/Library/Application Support/MTMR/Picture/929485ea4cd1230a3429e2623f6885fc.png"
+    }
+  },
+
+  {
+    "type": "timeButton",
+    // "formatTemplate": "h:mm a",
+    "width": 44,
+    "bordered": false,
+    "align": "right",
+    "longAction": "shellScript",
+    "longExecutablePath": "/usr/bin/pmset",
+    "longShellArguments": ["sleepnow"]
+  },
+  { "type": "darkMode", "align": "right"},  
+]
